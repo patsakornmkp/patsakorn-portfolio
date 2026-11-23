@@ -3,13 +3,20 @@
 
 import { useState } from 'react'
 
+const BASE_PATH =
+  process.env.NODE_ENV === 'production'
+    ? '/patsakorn-portfolio'
+    : ''
+
+const assetPath = (path: string) => `${BASE_PATH}${path}`
+
 const projects = [
   {
     label: 'INDIVIDUAL SENIOR PROJECT',
     year: '2025–2026',
     title: 'PostureGuard AI',
     subtitle: 'Computer Vision-Based Sitting Posture Monitoring System',
-    image: '/images/projects/postureguard/history.png',
+    image: assetPath('/images/projects/postureguard/history.png'),
     description:
       'Real-time sitting posture monitoring using a webcam, designed to help users identify potentially improper sitting posture and receive feedback.',
     bullets: [
@@ -34,27 +41,27 @@ const projects = [
 
 const galleryImages = [
   {
-    src: '/images/projects/postureguard/login.png',
+    src: assetPath('/images/projects/postureguard/login.png'),
     title: 'Login',
   },
   {
-    src: '/images/projects/postureguard/register.png',
+    src: assetPath('/images/projects/postureguard/register.png'),
     title: 'Register',
   },
   {
-    src: '/images/projects/postureguard/setup.png',
+    src: assetPath('/images/projects/postureguard/setup.png'),
     title: 'Setup',
   },
   {
-    src: '/images/projects/postureguard/monitor.png',
+    src: assetPath('/images/projects/postureguard/monitor.png'),
     title: 'Monitor',
   },
   {
-    src: '/images/projects/postureguard/summary.png',
+    src: assetPath('/images/projects/postureguard/summary.png'),
     title: 'Summary',
   },
   {
-    src: '/images/projects/postureguard/history.png',
+    src: assetPath('/images/projects/postureguard/history.png'),
     title: 'History Dashboard',
   },
 ]
