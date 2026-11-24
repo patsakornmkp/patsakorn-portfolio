@@ -346,3 +346,132 @@ footer a{font-size:11px}
     height: 58px;
   }
 }
+/* ===== Hero Portrait Clean Design ===== */
+
+.heroArt {
+  height: 400px;
+  background: #e9eddf;
+  border-radius: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.orb {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 1;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: hidden;
+  z-index: 0;
+}
+
+.orb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
+}
+
+.heroPortrait {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 350px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.heroPortrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.floating {
+  position: absolute;
+  z-index: 2;
+}
+
+/* Contact dropdown */
+.contactDropdown {
+  position: relative;
+}
+
+.contactDropdown .topCta {
+  cursor: pointer;
+}
+
+.contactMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+
+  transition: opacity 0.25s ease, transform 0.25s ease,
+    visibility 0.25s ease;
+
+  z-index: 100;
+}
+
+/* Floating circle icons */
+.contactMenu a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent);
+  color: var(--ink);
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px #20211f18;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactMenu a:hover {
+  transform: scale(1.12);
+  box-shadow: 0 10px 24px #20211f25;
+}
+
+.contactMenu svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* Reveal on hover */
+.contactDropdown:hover .contactMenu,
+.contactDropdown:focus-within .contactMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
